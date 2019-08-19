@@ -1,0 +1,44 @@
+.Layout {
+  text-align: center;
+  /* display: flex; */
+  /* max-width: 750px; */
+}
+
+.Container {
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.Row {
+  /* margin: 0 250px; */
+}
+
+.header {
+  border: solid 2px white;
+  border-bottom: none;
+  margin-top: 50px;
+  background-color: rgb(175, 175, 175);
+  text-align: center;
+  font-family: 'GnraleStationExtended';
+  font-weight: normal;
+  font-size: 28px;
+  font-style: normal;
+}
+
+.chat-window {
+  border: solid 2px white;
+  background-color: rgb(175, 175, 175);
+  min-height: 500px;
+  padding: 20px;
+}
+
+.input-zone{
+  border: solid 2px white;
+  background-color: rgb(175, 175, 175);
+}
+
+/* .chat-window-inner {
+  background-color: white;
+  height: 100%;
+} */

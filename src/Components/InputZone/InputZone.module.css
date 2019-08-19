@@ -1,0 +1,9 @@
+.InputZone {
+  display: flex;
+  justify-content: space-between;
+}
+
+.InputZone .text {
+  flex-grow: 1;
+  margin: 0 5px;
+}
