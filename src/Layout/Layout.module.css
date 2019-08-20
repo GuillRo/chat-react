@@ -20,7 +20,7 @@
   margin-top: 50px;
   background-color: rgb(175, 175, 175);
   text-align: center;
-  font-family: 'GnraleStationExtended';
+  /* font-family: 'GnraleStationExtended'; */
   font-weight: normal;
   font-size: 28px;
   font-style: normal;
@@ -28,6 +28,7 @@
 
 .chat-window {
   border: solid 2px white;
+  border-bottom: none;
   background-color: rgb(175, 175, 175);
   min-height: 500px;
   padding: 20px;

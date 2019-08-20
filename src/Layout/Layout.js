@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Container, Row, Col } from 'react-bootstrap'
 
-import Display from '../Components/Display/Display'
-import LoginButton from '../Components/LoginButton/LoginButton'
+// import Display from '../Components/Display/Display'
+// import LoginButton from '../Components/LoginButton/LoginButton'
 import InputZone from '../Components/InputZone/InputZone'
 
 import styles from './Layout.module.css'
@@ -27,7 +27,8 @@ const Layout = (props) => {
           md={{ span: 6, offset: 3 }}
           sm={12}
           className={styles["chat-window"]}>
-          <Display />
+          {/* <Display /> */}
+          {props.children}
         </Col>
       </Row>
       <Row className={styles.Row}>
@@ -35,7 +36,7 @@ const Layout = (props) => {
           md={{ span: 6, offset: 3 }}
           sm={12}
           className={styles["input-zone"]}>
-          <InputZone></InputZone>
+          <InputZone socket={props.socket}></InputZone>
         </Col>
       </Row>
     </Container>
