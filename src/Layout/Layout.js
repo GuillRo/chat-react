@@ -1,14 +1,10 @@
 import React from 'react'
 
 import { Container, Row, Col } from 'react-bootstrap'
-
-// import Display from '../Components/Display/Display'
-// import LoginButton from '../Components/LoginButton/LoginButton'
 import InputZone from '../Components/InputZone/InputZone'
 
+import SocketContext from '../socketContext'
 import styles from './Layout.module.css'
-
-
 
 const Layout = (props) => {
   return (
@@ -36,7 +32,10 @@ const Layout = (props) => {
           md={{ span: 6, offset: 3 }}
           sm={12}
           className={styles["input-zone"]}>
-          <InputZone socket={props.socket}></InputZone>
+          <SocketContext.Consumer>
+          {socket => <InputZone {...props} socket={socket} />}
+            {/* <InputZone socket={props.socket}></InputZone> */}
+          </SocketContext.Consumer>
         </Col>
       </Row>
     </Container>

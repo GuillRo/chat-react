@@ -7,27 +7,9 @@ import Display from './Components/Display/Display'
 
 import SocketContext from './socketContext'
 
-
-
 const App = () => {
 
-  const socket = io()
-  // useEffect(() => {
-  //   // socket.open()
-  //   socket.on('post message', msg => {
-  //     console.log('messageuh: ' + msg)
-  //   })
-  
-  //   return () => { socket.close() }
-  // })
-  
-  // const post = () => {
-  //   // const socket = io('localhost:8080')
-  //   console.log("hey")
-  //   socket.emit('post message', "emittt")
-  // }
-  
-  
+  const socket = io() 
   return (
     <SocketContext.Provider value={socket}>
     <Layout>
