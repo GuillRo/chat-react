@@ -4,7 +4,14 @@ import styles from './ConectedUsers.module.css'
 
 const ConnectedUsers = () => {
   return (
-    <p>yo</p>
+    <>
+      <div className={styles.ConnectedUsers}>
+        {/* <p>john</p>
+        <p>Tom</p> */}
+        <div>john</div>
+        <div>Tom</div>
+      </div>
+    </>
   )
 }
 

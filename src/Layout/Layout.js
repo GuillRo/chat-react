@@ -1,37 +1,58 @@
 import React from 'react'
 import Split from 'react-split'
 
-// import { Container, Row, Col } from 'react-bootstrap'
+import ChatDisplay from '../Components/ChatDisplay/ChatDisplay'
+import ConnectedUsers from '../Components/ConnectedUsers/ConnectedUsers'
 import InputZone from '../Components/InputZone/InputZone'
 
 import SocketContext from '../socketContext'
 import styles from './Layout.module.css'
 
-
 const Layout = (props) => {
   return (
     <>
-        <div className={styles.container}>
-          <div className={`${styles["row"]} ${styles["header"]}`}>
-            {/* <h1>SuperChat 95</h1> */}
-            <h1>SUPERCHAT 95</h1>
-            <div className={styles.ads}> BUY STRAWBERRIES NOW!!!!8!</div>
-          </div>
-          <Split
-            sizes={[75, 25]}
-            className={`${styles["row"]} ${styles["center"]}`}>
-            <div className={styles["messages-box"]}>
+      <div className={styles.container}>
+        <div className={`${styles["row"]} ${styles["header"]}`}>
+          <h1>
+            <span>S</span>
+            <span>U</span>
+            <span>P</span>
+            <span>E</span>
+            <span>R</span>
+            <span>C</span>
+            <span>H</span>
+            <span>A</span>
+            <span>T</span>
+            <span>9</span>
+            <span>5</span>
+          </h1>
+          <div className={styles.ads}>
+            <div>
+              Best strawberries in town
             </div>
-            <div className={styles["users-box"]}>
+            <br />
+            <div>
+              call +1-202-555-0169
             </div>
-          </Split>
-          <div className={`${styles["row"]} ${styles["footer"]}`}>
-            <SocketContext.Consumer>
-              {socket => <InputZone {...props} socket={socket} />}
-              {/* <InputZone socket={props.socket}></InputZone> */}
-            </SocketContext.Consumer>
           </div>
         </div>
+        <Split
+          sizes={[75, 25]}
+          className={`${styles["row"]} ${styles["center"]}`}>
+          <div className={styles["messages-box"]}>
+            <ChatDisplay />
+          </div>
+          <div className={styles["users-box"]}>
+            <ConnectedUsers />
+          </div>
+        </Split>
+        <div className={`${styles["row"]} ${styles["footer"]}`}>
+          <SocketContext.Consumer>
+            {socket => <InputZone {...props} socket={socket} />}
+            {/* <InputZone socket={props.socket}></InputZone> */}
+          </SocketContext.Consumer>
+        </div>
+      </div>
     </>
 
 

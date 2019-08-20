@@ -1,15 +1,15 @@
 import React from 'react'
 
 import Message from '../Message/Message'
-import styles from './Display.module.css'
+import styles from './ChatDisplay.module.css'
 
-const Display = () => {
+const ChatDisplay = () => {
   return (
-    <div className={styles.Display}>
+    <div className={styles.ChatDisplay}>
       <Message name="john" text="hi my name is john"></Message>
       <Message name="Tom" text="hi my name is tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom"></Message>
     </div>
   )
 }
 
-export default Display
+export default ChatDisplay

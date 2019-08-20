@@ -18,20 +18,29 @@ const InputZone = (props) => {
     socket.emit('post message', "emittt")
   }
 
+  const login = () => {
+    setConnected(true)
+  }
+
+  const logout = () => {
+    setConnected(false)
+  }
+
   let inputs
   if (connected) {
     inputs =
       <>
         <input className={styles.text} placeholder="say something edgy"></input>
         <button onClick={post}>Send</button>
-        <button>Logout</button>
+        <button onClick={logout}>Logout</button>
       </>
   }
   else {
     inputs =
       <>
+        {/* <label htmlFor="username">Enter your username:</label> */}
         <input placeholder="username"></input>
-        <button>Login</button>
+        <button onClick={login}>Login</button>
       </>
   }
 
