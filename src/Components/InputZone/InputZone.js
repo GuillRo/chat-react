@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import LoginButton from '../LoginButton/LoginButton'
-
 import styles from './InputZone.module.css'
 
 const InputZone = (props) => {
@@ -33,7 +31,7 @@ const InputZone = (props) => {
     inputs =
       <>
         <input placeholder="username"></input>
-        <LoginButton></LoginButton>
+        <button>Login</button>
       </>
   }
 

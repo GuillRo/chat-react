@@ -1,9 +1,17 @@
 .InputZone {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .InputZone .text {
   flex-grow: 1;
-  margin: 0 5px;
+}
+
+.InputZone :nth-child(1n+0) {
+  margin-right: 10px;
+}
+
+.InputZone :last-child {
+  margin-right: 0;
 }
