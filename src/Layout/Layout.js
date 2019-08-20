@@ -1,7 +1,7 @@
 import React from 'react'
 import Split from 'react-split'
 
-import ChatDisplay from '../Components/ChatDisplay/ChatDisplay'
+import ChatRoom from '../Components/ChatRoom/ChatRoom'
 import ConnectedUsers from '../Components/ConnectedUsers/ConnectedUsers'
 import InputZone from '../Components/InputZone/InputZone'
 
@@ -40,7 +40,7 @@ const Layout = (props) => {
           sizes={[75, 25]}
           className={`${styles["row"]} ${styles["center"]}`}>
           <div className={styles["messages-box"]}>
-            <ChatDisplay />
+            <ChatRoom />
           </div>
           <div className={styles["users-box"]}>
             <ConnectedUsers />
