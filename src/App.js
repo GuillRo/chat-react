@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from './Layout/Layout'
 import io from "socket.io-client"
-import { Route, Switch } from 'react-router-dom'
+// import { Route, Switch } from 'react-router-dom'
 
 import Display from './Components/Display/Display'
 
