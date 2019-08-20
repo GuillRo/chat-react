@@ -11,7 +11,7 @@ const Layout = (props) => {
     <Container className={styles.Container}>
       <Row className={styles.Row}>
         <Col
-          md={{ span: 6, offset: 3 }}
+          // md={{ span: 6, offset: 3 }}
           sm={12}
           className={styles.header}>
           <p>Chat like it's 2003</p>
@@ -20,20 +20,25 @@ const Layout = (props) => {
       </Row>
       <Row className={styles.Row}>
         <Col
-          md={{ span: 6, offset: 3 }}
-          sm={12}
+          // md={{ span: 6, offset: 3 }}
+          sm={9}
           className={styles["chat-window"]}>
           {/* <Display /> */}
           {props.children}
         </Col>
+        <Col
+          sm={3}
+          className={styles["users-window"]}>
+          
+        </Col>
       </Row>
       <Row className={styles.Row}>
         <Col
-          md={{ span: 6, offset: 3 }}
+          // md={{ span: 6, offset: 3 }}
           sm={12}
           className={styles["input-zone"]}>
           <SocketContext.Consumer>
-          {socket => <InputZone {...props} socket={socket} />}
+            {socket => <InputZone {...props} socket={socket} />}
             {/* <InputZone socket={props.socket}></InputZone> */}
           </SocketContext.Consumer>
         </Col>
