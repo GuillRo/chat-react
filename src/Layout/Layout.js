@@ -1,6 +1,8 @@
 import React from 'react'
 import Split from 'react-split'
 
+import MediaQuery from "react-responsive"
+
 import ChatRoom from '../Components/ChatRoom/ChatRoom'
 import ConnectedUsers from '../Components/ConnectedUsers/ConnectedUsers'
 import InputZone from '../Components/InputZone/InputZone'
@@ -36,16 +38,27 @@ const Layout = (props) => {
             </div>
           </div>
         </div>
-        <Split
-          sizes={[75, 25]}
-          className={`${styles["row"]} ${styles["center"]}`}>
-          <div className={styles["messages-box"]}>
-            <ChatRoom />
+
+        <MediaQuery query="(min-width: 725px)">
+          <Split
+            sizes={[75, 25]}
+            className={`${styles["row"]} ${styles["center"]}`}>
+            <div className={styles["messages-box"]}>
+              <ChatRoom />
+            </div>
+            <div className={styles["users-box"]}>
+              <ConnectedUsers />
+            </div>
+          </Split>
+        </MediaQuery>
+        <MediaQuery query="(max-width:724px)">
+          <div className={`${styles["row"]} ${styles["center"]}`}>
+            <div className={styles["messages-box"]}>
+              <ChatRoom />
+            </div>
           </div>
-          <div className={styles["users-box"]}>
-            <ConnectedUsers />
-          </div>
-        </Split>
+        </MediaQuery>
+
         <div className={`${styles["row"]} ${styles["footer"]}`}>
           <SocketContext.Consumer>
             {socket => <InputZone {...props} socket={socket} />}
