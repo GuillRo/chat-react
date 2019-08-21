@@ -1,50 +1,26 @@
 import React, { useState, useEffect } from 'react'
 
+import Input from '../Input/Input'
+import Button from '../Button/Button'
+import Form from '../Form/Form'
+
 import styles from './InputZone.module.css'
 
 const InputZone = (props) => {
   const [connected, setConnected] = useState(true)
-  const [username, setUsername] = useState()
-
-  const socket = props.socket
-  useEffect(() => {
-    socket.on('post message', msg => {
-      console.log('messageuh: ' + msg)
-    })
-    // return () => { socket.close()}
-  })
-
-  const post = () => {
-    console.log("hey")
-    socket.emit('post message', "emittt")
-  }
-
-  const login = (login) => {
-    if (login && login.toString().length > 0) {
-      setUsername(login)
-      setConnected(true)
-    }
-  }
-
-  const logout = () => {
-    setConnected(false)
-  }
 
   let inputs
   if (connected) {
     inputs =
       <>
-        <input className={styles.text} placeholder="say something edgy"></input>
-        <button onClick={post}>Send</button>
-        <button onClick={logout}>Logout</button>
+        <Form placeholderInput="Say something edgy" buttonName="Send"/>
+        <Button>Logout</Button>
       </>
   }
   else {
     inputs =
       <>
-        {/* <label htmlFor="username">Enter your username:</label> */}
-        <input placeholder="username"></input>
-        <button onClick={login}>Login</button>
+        <Form placeholderInput="Username" buttonName="Login"/>
       </>
   }
 
@@ -56,3 +32,30 @@ const InputZone = (props) => {
 }
 
 export default InputZone
+
+
+  // const socket = props.socket
+  // useEffect(() => {
+  //   socket.on('post message', msg => {
+  //     console.log('messageuh: ' + msg)
+  //   })
+  //   // return () => { socket.close()}
+  // })
+  // const post = () => {
+  //   console.log("hey")
+  //   socket.emit('post message', "emittt")
+  // }
+
+  // const [username, setUsername] = useState()
+
+  // const login = (login) => {
+  //   if (login && login.toString().length > 0) {
+  //     setUsername(login)
+  //     setConnected(true)
+  //   }
+  // }
+
+  // const logout = () => {
+  //   setConnected(false)
+  //   setUserName(null)
+  // }

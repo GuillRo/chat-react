@@ -1,7 +1,10 @@
 import React from 'react'
 import Split from 'react-split'
-
 import MediaQuery from "react-responsive"
+
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
+
 
 import ChatRoom from '../Components/ChatRoom/ChatRoom'
 import ConnectedUsers from '../Components/ConnectedUsers/ConnectedUsers'
@@ -14,30 +17,7 @@ const Layout = (props) => {
   return (
     <>
       <div className={styles.container}>
-        <div className={`${styles["row"]} ${styles["header"]}`}>
-          <h1>
-            <span>S</span>
-            <span>U</span>
-            <span>P</span>
-            <span>E</span>
-            <span>R</span>
-            <span>C</span>
-            <span>H</span>
-            <span>A</span>
-            <span>T</span>
-            <span>9</span>
-            <span>5</span>
-          </h1>
-          <div className={styles.ads}>
-            <div>
-              Best strawberries in town
-            </div>
-            <br />
-            <div>
-              call +1-202-555-0169
-            </div>
-          </div>
-        </div>
+        <Header customStyle={styles.row}/>
 
         <MediaQuery query="(min-width: 725px)">
           <Split
