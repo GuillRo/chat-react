@@ -3,7 +3,6 @@ import React from 'react'
 import styles from './Input.module.css'
 
 const Input = (props) => {
-
   return (
     <input
       placeholder={props.placeholder}
@@ -15,13 +14,3 @@ const Input = (props) => {
 }
 
 export default Input
-
-// const [input, setInput] = useState('')
-// const handleKeyDown = key => {
-//   if (key === "Enter" && input.toString().length > 0) {
-//     props.handleInput(input)
-//     setInput('')
-//   }
-// }
-
-// onKeyDown={e => handleKeyDown(e.key)}

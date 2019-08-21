@@ -29,26 +29,3 @@ io.on('connection', socket => {
 http.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
-
-// app.listen(port, () => {
-//   console.log(`Listening on port ${port}`)
-// })
-
-// const server = app.listen(port, () => {
-//   console.log(`Listening on port ${port}`)
-// })
-
-// const socketIO = require('socket.io')
-// const io = socketIO(server)
-
-// io.on('connection', socket => {
-//   console.log('Client connected')
-
-//   socket.on("post", (text) => {
-//     console.log(text)
-//   })
-
-//   socket.on("disconnect", () => {
-//     console.log("Client disconnected")
-//   })
-// })

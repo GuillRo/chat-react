@@ -1,18 +1,27 @@
 import React from 'react'
-import Layout from './Layout/Layout'
 import io from "socket.io-client"
-// import { Route, Switch } from 'react-router-dom'
 
-// import Display from './Components/ChatDisplay/ChatDisplay'
+import Layout from './Layout/Layout'
+import ChatRoom from './Components/ChatRoom/ChatRoom'
+import ConnectedUsers from './Components/ConnectedUsers/ConnectedUsers'
+import Logo from './Components/Logo/Logo'
+import Advertisement from './Components/Advertisement/Advertisement'
+import UserActions from './Actions/UserActions/UserActions'
 
 import SocketContext from './socketContext'
 
 const App = () => {
 
-  const socket = io() 
+  const socket = io()
   return (
     <SocketContext.Provider value={socket}>
-    <Layout/>
+      <Layout
+        advertisement={<Advertisement />}
+        logo={<Logo />}
+        chatRoom={<ChatRoom />}
+        connectedUsers={<ConnectedUsers />}
+        userActions={<UserActions />}>
+      </Layout>
     </SocketContext.Provider>
   )
 }

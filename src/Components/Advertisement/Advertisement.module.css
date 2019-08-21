@@ -1,24 +1,4 @@
-.Header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.Header h1 {
-  margin: 0 25px;
-  font-family: 'Monoton', cursive;
-  font-size: 42px;
-  background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* color: pink; */
-  /* font-family: 'Press Start 2P', cursive;
-  font-size: 24px;
-  font-weight: bold; */
-}
-
-.ads {
+.Advertisement {
   margin: 0 25px;
   min-height: 80px;
   flex-grow: 1;
@@ -40,7 +20,7 @@
   flex-direction: column;
 }
 
-.ads :first-child {
+.Advertisement :first-child {
   /* margin: 10px; */
   /* color: #E34388; */
   /* color: yellow; */
@@ -52,25 +32,25 @@
   line-height: 1.1;
 }
 
-.ads :last-child {
+.Advertisement :last-child {
   font-size: 24px;
   color: yellow;
 }
 
 @media (max-width: 950px) {
-  .ads {
+  .Advertisement {
     justify-content: center;
   }
-  .ads :first-child {
+  .Advertisement :first-child {
     font-size: 24px;
   }
-  .ads :last-child {
+  .Advertisement :last-child {
     font-size: 16px;
   }
 }
 
 @media (max-width: 725px) {
-  .ads {
+  .Advertisement {
     display: none;
   }
 }
