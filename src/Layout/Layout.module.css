@@ -76,6 +76,28 @@
   color: yellow;
 }
 
+@media (max-width: 950px) {
+  .ads {
+    /* align-items: center; */
+    justify-content: center;
+  }
+
+  .ads :first-child {
+    font-size: 24px;
+  }
+
+  .ads :last-child {
+    font-size: 16px;
+
+  }
+}
+
+@media (max-width: 725px) {
+  .ads {
+    display: none;
+  }
+}
+
 .center {
   margin: 0 25px;
   display: flex;

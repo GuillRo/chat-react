@@ -4,7 +4,8 @@ import styles from './InputZone.module.css'
 
 const InputZone = (props) => {
   const [connected, setConnected] = useState(true)
-  
+  const [username, setUsername] = useState()
+
   const socket = props.socket
   useEffect(() => {
     socket.on('post message', msg => {
@@ -12,14 +13,17 @@ const InputZone = (props) => {
     })
     // return () => { socket.close()}
   })
-  
+
   const post = () => {
     console.log("hey")
     socket.emit('post message', "emittt")
   }
 
-  const login = () => {
-    setConnected(true)
+  const login = (login) => {
+    if (login && login.toString().length > 0) {
+      setUsername(login)
+      setConnected(true)
+    }
   }
 
   const logout = () => {
