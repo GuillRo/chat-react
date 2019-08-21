@@ -14,7 +14,7 @@ const Layout = (props) => {
         </header>
 
         <div className={[styles.row, styles.center].join(' ')}>
-          <MediaQuery query="(min-width: 725px)">
+          <MediaQuery query="(min-width: 726px)">
             <Split
               sizes={[75, 25]}
               style={{ display: "flex", flex: "1 1 auto" }}>
@@ -22,7 +22,7 @@ const Layout = (props) => {
               {props.connectedUsers}
             </Split>
           </MediaQuery>
-          <MediaQuery query="(max-width:724px)">
+          <MediaQuery query="(max-width:725px)">
             {props.chatRoom}
           </MediaQuery>
         </div>
