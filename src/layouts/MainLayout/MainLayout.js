@@ -2,9 +2,9 @@ import React from 'react'
 import Split from 'react-split'
 import MediaQuery from "react-responsive"
 
-import styles from './Layout.module.css'
+import styles from './MainLayout.module.css'
 
-const Layout = (props) => {
+const MainLayout = (props) => {
   return (
     <>
       <div className={styles.container}>
@@ -28,11 +28,11 @@ const Layout = (props) => {
         </div>
 
         <footer className={[styles.row, styles.footer].join(' ')}>
-          {props.userActions}
+          {props.footer}
         </footer>
       </div>
     </>
   )
 }
 
-export default Layout
+export default MainLayout

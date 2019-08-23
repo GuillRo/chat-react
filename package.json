@@ -7,10 +7,11 @@
     "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
     "react-responsive": "^7.0.0",
-    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "react-split": "^2.0.7",
+    "redux": "^4.0.4",
     "socket.io": "^2.2.0"
   },
   "scripts": {
@@ -38,7 +39,8 @@
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "eslint": "^6.2.0",
-    "eslint-plugin-react": "^7.14.3"
+    "eslint-plugin-react": "^7.14.3",
+    "redux-devtools": "^3.5.0"
   },
   "proxy": "http://localhost:8080"
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
-import Button from '../../Components/Button/Button'
-import Input from '../../Components/Input/Input'
+import Button from '../Button/Button'
+import Input from '../Input/Input'
 
-import styles from './UserActions.module.css'
+import styles from './LoggedUserFooter.module.css'
 
-const UserActions = (props) => {
+const LoggedUserFooter = (props) => {
 
   const [inputValue, setInputValue] = useState('')
 
@@ -22,7 +23,8 @@ const UserActions = (props) => {
   }
 
   return (
-    <div className={styles.UserActions}>
+    <div className={styles.LoggedUserFooter}>
+      <p>Connected as: {props.username}</p>
       <form onSubmit={e => { submit(e) }} className={styles.form}>
         <Input
           customStyle={styles.Input}
@@ -36,4 +38,10 @@ const UserActions = (props) => {
   )
 }
 
-export default UserActions
+const mapStateToProps = state => {
+  return {
+    username: state.userData.username
+  }
+}
+
+export default connect(mapStateToProps)(LoggedUserFooter)

@@ -1,14 +1,14 @@
-.UserActions {
+.LoggedUserFooter {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.UserActions :nth-child(1n+0) {
+.LoggedUserFooter :nth-child(1n+0) {
   margin-right: 10px;
 }
 
-.UserActions :last-child {
+.LoggedUserFooter :last-child {
   margin-right: 0;
 }
 

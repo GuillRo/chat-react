@@ -28,7 +28,7 @@ module.exports = {
         'no-array-constructor': ['warn'],
         'no-caller': ['warn'],
         'no-cond-assign': ['warn', 'always'],
-        // 'no-console': ['warn', { allow: ['warn', 'error', 'reportException'] }],
+        'no-console': ['warn', { allow: ['warn', 'error', 'reportException'] }],
         'no-eval': ['warn'],
         'no-extend-native': ['warn'],
         'no-extra-bind': ['warn'],
@@ -54,6 +54,7 @@ module.exports = {
         'no-unreachable': ['warn'],
         'no-constant-condition': ['warn'],
         'semi': [1, 'never'],
+        'quotes': [1, "single", { "avoidEscape": true }],
 
         // React
         'react/prop-types': ['off'],

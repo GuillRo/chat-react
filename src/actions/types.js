@@ -1,0 +1,2 @@
+export const UPDATE_USERNAME = 'UPDATE_USERNAME'
+export const UPDATE_LOGGED = 'UPDATE_LOGGED'

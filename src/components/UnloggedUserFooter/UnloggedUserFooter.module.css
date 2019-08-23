@@ -1,0 +1,8 @@
+.UnloggedUserFooter {
+  width: 100%;
+  text-align: right;
+}
+
+.UnloggedUserFooter :first-child {
+  margin: 10px;
+}

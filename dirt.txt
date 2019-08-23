@@ -1,0 +1,199 @@
+//-----------Layout--------------------------------------------------------------------------------------------
+
+
+// import SocketContext from '../socketContext'
+
+
+
+// <div className={`${styles["row"]} ${styles["footer"]}`}>
+//   <SocketContext.Consumer>
+//     {socket => <InputZone {...props} socket={socket} />}
+//   </SocketContext.Consumer>
+// </div> 
+
+
+
+
+// <Container className={styles.Container}>
+//   <Row className={styles.Row}>
+//     <Col
+    //       // md={{ span: 6, offset: 3 }}
+    //       sm={12}
+    //       className={styles.header}>
+    //       <p>Chat like it's 2003</p>
+    //       {/* <LoginButton></LoginButton> */}
+    //     </Col>
+    //   </Row>
+    //   <Row className={styles.Row}>
+    //     <Col
+    //       // md={{ span: 6, offset: 3 }}
+    //       sm={9}
+    //       className={styles["chat-window"]}>
+    //       {/* <Display /> */}
+    //       {props.children}
+    //     </Col>
+    //     <Col
+    //       sm={3}
+    //       className={styles["users-window"]}>
+
+    //     </Col>
+    //   </Row>
+    //   <Row className={styles.Row}>
+    //     <Col
+    //       // md={{ span: 6, offset: 3 }}
+    //       sm={12}
+    //       className={styles["input-zone"]}>
+    //       <SocketContext.Consumer>
+    //         {socket => <InputZone {...props} socket={socket} />}
+    //         {/* <InputZone socket={props.socket}></InputZone> */}
+    //       </SocketContext.Consumer>
+    //     </Col>
+    //   </Row>
+    // </Container>
+
+
+
+
+    //------------------------------inputzone-------------------------------------------------------------------------
+
+    // import React, { useState, useEffect } from 'react'
+
+    // import Button from '../Button/Button'
+    // import Form from '../Form/Form'
+
+    // import styles from './InputZone.module.css'
+
+    // const InputZone = (props) => {
+    //   const [connected, setConnected] = useState(true)
+
+    //   let inputs
+    //   if (connected) {
+    //     inputs =
+    //       <>
+    //         <Form customStyleForm={styles.InputZone} placeholderInput="Say something edgy" buttonName="Send" customStyleInput={styles.grow} />
+    //         <Button>Logout</Button>
+    //       </>
+    //   }
+    //   else {
+    //     inputs =
+    //       <>
+    //         <Form placeholderInput="Username" buttonName="Login" />
+    //       </>
+    //   }
+
+    //   return (
+    //     // <div className={styles.InputZone}>
+    //     <>
+    //       {inputs}
+    //     </>
+    //     // </div>
+    //   )
+    // }
+
+    // export default InputZone
+
+    // --------------------------------------------inputzone comment-------------------------------------------
+
+      // const socket = props.socket
+  // useEffect(() => {
+  //   socket.on('post message', msg => {
+  //     console.log('messageuh: ' + msg)
+  //   })
+  //   // return () => { socket.close()}
+  // })
+  // const post = () => {
+  //   console.log("hey")
+  //   socket.emit('post message', "emittt")
+  // }
+
+  // const [username, setUsername] = useState()
+
+  // const login = (login) => {
+  //   if (login && login.toString().length > 0) {
+  //     setUsername(login)
+  //     setConnected(true)
+  //   }
+  // }
+
+  // const logout = () => {
+  //   setConnected(false)
+  //   setUserName(null)
+  // }
+
+  // ------------------------------server-----------------------------------------------
+  // app.listen(port, () => {
+//   console.log(`Listening on port ${port}`)
+// })
+
+// const server = app.listen(port, () => {
+//   console.log(`Listening on port ${port}`)
+// })
+
+// const socketIO = require('socket.io')
+// const io = socketIO(server)
+
+// io.on('connection', socket => {
+//   console.log('Client connected')
+
+//   socket.on("post", (text) => {
+//     console.log(text)
+//   })
+
+//   socket.on("disconnect", () => {
+//     console.log("Client disconnected")
+//   })
+// })
+
+// ------------------------------------------------input------------------------------------
+
+
+// const [input, setInput] = useState('')
+// const handleKeyDown = key => {
+//   if (key === "Enter" && input.toString().length > 0) {
+//     props.handleInput(input)
+//     setInput('')
+//   }
+// }
+
+// onKeyDown={e => handleKeyDown(e.key)}
+
+// ----------------user-context----------------- (users branch)
+
+// import React, { useState } from 'react'
+// import io from 'socket.io-client'
+
+// const UserContext = React.createContext()
+
+// export const UserProvider = (props) => {
+//   const socket = io()
+//   const [state, setState] = useState({
+//     username: '',
+//     connected: false,
+//     socket,
+//     updateUsername: newUserName => {
+//       setState(prev => ({
+//         ...prev,
+//         username: newUserName
+//       }))
+//     },
+//     connectUser: () => {
+//       setState(prev => ({
+//         ...prev,
+//         connected: true
+//       }))
+//     },
+//     disconnectUser: () => {
+//       setState(prev => ({
+//         ...prev,
+//         username: '',
+//         connected: false
+//       }))
+//     }
+//   })
+
+//   return (
+//     <UserContext.Provider value={state}>
+//       {props.children}
+//     </UserContext.Provider>
+//   )
+// }

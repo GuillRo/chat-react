@@ -1,29 +1,46 @@
 import React from 'react'
-import io from "socket.io-client"
 
-import Layout from './Layout/Layout'
-import ChatRoom from './Components/ChatRoom/ChatRoom'
-import ConnectedUsers from './Components/ConnectedUsers/ConnectedUsers'
-import Logo from './Components/Logo/Logo'
-import Advertisement from './Components/Advertisement/Advertisement'
-import UserActions from './Actions/UserActions/UserActions'
+import MainLayout from './layouts/MainLayout/MainLayout'
+import ChatRoom from './components/ChatRoom/ChatRoom'
+import ConnectedUsers from './components/ConnectedUsers/ConnectedUsers'
+import Logo from './components/Logo/Logo'
+import Advertisement from './components/Advertisement/Advertisement'
+import LoggedUserFooter from './components/LoggedUserFooter/LoggedUserFooter'
+import UnloggedUserFooter from './components/UnloggedUserFooter/UnloggedUserFooter'
 
-import SocketContext from './socketContext'
+import { connect } from 'react-redux'
 
-const App = () => {
+// import io from "socket.io-client"
+// import SocketContext from './socketContext'
 
-  const socket = io()
+// /!\/!\/!\/!\/!\/!\/!\/!\/!\ VOIR branch users pour context avec l'app.js
+//  et AUSSI POUR SCANLINES!
+
+const App = (props) => {
+
+
+  let footer
+  if (props.logged) {
+    footer = <LoggedUserFooter />
+  } else {
+    footer = <UnloggedUserFooter />
+  }
+
   return (
-    <SocketContext.Provider value={socket}>
-      <Layout
-        advertisement={<Advertisement />}
-        logo={<Logo />}
-        chatRoom={<ChatRoom />}
-        connectedUsers={<ConnectedUsers />}
-        userActions={<UserActions />}>
-      </Layout>
-    </SocketContext.Provider>
+    <MainLayout
+      advertisement={<Advertisement />}
+      logo={<Logo />}
+      chatRoom={<ChatRoom />}
+      connectedUsers={<ConnectedUsers />}
+      footer={footer}>
+    </MainLayout>
   )
 }
 
-export default App
+const mapStateToProps = state => {
+  return {
+    logged: state.userData.logged
+  }
+}
+
+export default connect(mapStateToProps)(App)
