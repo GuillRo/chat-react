@@ -8,6 +8,7 @@ const MainLayout = (props) => {
   return (
     <>
       <div className={styles.container}>
+      {/* <div className={[styles.container, styles.scanlines].join(' ')}> */}
         <header className={[styles.row, styles.header].join(' ')}>
           {props.logo}
           {props.advertisement}
