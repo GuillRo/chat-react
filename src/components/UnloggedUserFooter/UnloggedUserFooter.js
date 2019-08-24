@@ -17,15 +17,10 @@ const UnloggedUserFooter = (props) => {
       props.updateUsername(username)
       props.updateLogged(true)
     }
-
-    // marche sans mapdispatchtoProps (un seul arg dans le connect, le mapStateToProps)
-    // console.log(props.username)
-    // props.dispatch(updateUsername('Joe'))
-
   }
 
   return (
-    <form onSubmit={e => login(e)}>
+    <form onSubmit={e => login(e)} className={styles.UnloggedUserFooter}>
       <Input placeholder="username" onChange={val => setUsername(val)} value={username} />
       <Button>Log in</Button>
     </form>
@@ -41,15 +36,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     updateUsername: (newUsername) => { dispatch(updateUsername(newUsername)) },
-    // example of other use
-    // updateUsername: newUsername => {
-    //   const uName = newUsername[0].toUpperCase() + newUsername.substr(1)
-    //   dispatch(updateUsername(uName))
-    // }
     updateLogged: boolean => { dispatch(updateLogged(boolean)) }
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UnloggedUserFooter)
-// Work also
-// export default connect(mapStateToProps, { updateUsername })(UnloggedUserFooter)

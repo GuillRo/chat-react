@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 
+import { updateUsername ,updateLogged } from '../../actions/index'
+
 import styles from './LoggedUserFooter.module.css'
 
 const LoggedUserFooter = (props) => {
@@ -11,7 +13,8 @@ const LoggedUserFooter = (props) => {
   const [inputValue, setInputValue] = useState('')
 
   const logout = () => {
-    console.log('logout')
+    props.updateUsername('')
+    props.updateLogged()
   }
 
   const submit = event => {
@@ -24,7 +27,7 @@ const LoggedUserFooter = (props) => {
 
   return (
     <div className={styles.LoggedUserFooter}>
-      <p>Connected as: {props.username}</p>
+      {/* <p>Connected as: {props.username}</p> */}
       <form onSubmit={e => { submit(e) }} className={styles.form}>
         <Input
           customStyle={styles.Input}
@@ -44,4 +47,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(LoggedUserFooter)
+const mapDispatchToProps = dispatch => {
+  return {
+    updateLogged: () => {dispatch(updateLogged(false))},
+    updateUsername: newUsername =>{dispatch(updateUsername(newUsername))}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoggedUserFooter)
