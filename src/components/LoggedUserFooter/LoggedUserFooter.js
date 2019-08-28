@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import Button from '../Button/Button'
@@ -11,6 +11,16 @@ import styles from './LoggedUserFooter.module.css'
 const LoggedUserFooter = (props) => {
 
   const [inputValue, setInputValue] = useState('')
+  const [customInputStyle, setCustomInputStyle] = useState('')
+
+  useEffect(() => {
+    if (customInputStyle !== '') {
+      const timer = setTimeout(() => {
+        setCustomInputStyle('')
+      }, 1500)
+      return () => clearTimeout(timer)
+    }
+  }, [customInputStyle])
 
   const logout = () => {
     props.updateUsername('')
@@ -22,6 +32,9 @@ const LoggedUserFooter = (props) => {
     if (inputValue.toString().length > 0) {
       console.log(inputValue)
     }
+    else if (customInputStyle === '') {
+      setCustomInputStyle(styles['Input-red'])
+    }
     setInputValue('')
   }
 
@@ -30,7 +43,7 @@ const LoggedUserFooter = (props) => {
       {/* <p>Connected as: {props.username}</p> */}
       <form onSubmit={e => { submit(e) }} className={styles.form}>
         <Input
-          customStyle={styles.Input}
+          customStyle={[styles.Input, customInputStyle].join(' ')}
           placeholder="Say something edgy"
           value={inputValue}
           onChange={val => { setInputValue(val) }} />
